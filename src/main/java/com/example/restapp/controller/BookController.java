@@ -40,7 +40,7 @@ public class BookController {
 
     @PutMapping("/update")
     public ResponseEntity<Book> updateBook(Book book) {
-        return new ResponseEntity<>(bookService.saveBook(book), HttpStatus.OK);
+        return new ResponseEntity<>(bookService.updateBook(book), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete")
@@ -57,11 +57,11 @@ public class BookController {
 
     @GetMapping("/genre/author/page")
     public ResponseEntity<List<Book>> getBooksByAuthorAndGenrePageable(@RequestParam String author,
-                                                               @RequestParam String genre,
-                                                               @RequestParam Integer pageNumber,
-                                                               @RequestParam Integer pageSize) {
+                                                                       @RequestParam String genre,
+                                                                       @RequestParam Integer pageNumber,
+                                                                       @RequestParam Integer pageSize) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        return new ResponseEntity<>(bookService.findByAuthorAndGenre(author, genre,pageable), HttpStatus.OK);
+        return new ResponseEntity<>(bookService.findByAuthorAndGenre(author, genre, pageable), HttpStatus.OK);
     }
 
 }

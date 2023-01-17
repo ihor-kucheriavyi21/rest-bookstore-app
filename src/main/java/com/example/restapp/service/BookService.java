@@ -40,11 +40,11 @@ public class BookService {
         bookRepository.delete(book);
     }
 
-    public List<Book> findByAuthorAndGenre(String author, String genre){
+    public List<Book> findByAuthorAndGenre(String author, String genre) {
         return bookRepository.findAllByAuthorAndGenre(author, genre);
     }
 
-    public List<Book> findByAuthorAndGenre(String author, String genre, Pageable pageable){
+    public List<Book> findByAuthorAndGenre(String author, String genre, Pageable pageable) {
         return bookRepository.findAllByAuthorAndGenre(author, genre, pageable);
     }
 
