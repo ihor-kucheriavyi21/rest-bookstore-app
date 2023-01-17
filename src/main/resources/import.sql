@@ -9,7 +9,7 @@ insert into book(id, author, genre, name, publisher_id) values (uuid_generate_v4
 insert into book(id, author, genre, name, publisher_id) values (uuid_generate_v4(),'author5','genre5','bookName5',(select publisher.id from publisher));
 insert into book(id, author, genre, name, publisher_id) values (uuid_generate_v4(),'author6','genre6','bookName6',(select publisher.id from publisher));
 
-        insert into publisher values (uuid_generate_v4(), 'Name1', 'Address1');
+insert into publisher values (uuid_generate_v4(), 'Name1', 'Address1');
 insert into publisher values (uuid_generate_v4(), 'Name2', 'Address2');
 insert into publisher values (uuid_generate_v4(), 'Name3', 'Address3');
 
